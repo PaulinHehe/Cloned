@@ -1,0 +1,8 @@
+[
+  { "name": "1", "year": 2024, "members": [{ "nom": "DOE", "prenom": "Alice" }, { "nom": "DIALLO", "prenom": "Mamadou Dian" }, { "nom": "TOFFA", "prenom": "Kodjo Kekeli Kevin" }] },
+  { "name": "2", "year": 2024, "members": [{ "nom": "SMITH", "prenom": "Bob" }, { "nom": "IDIRI", "prenom": "Yassine" }] },
+  { "name": "1", "year": 2025, "members": [{ "nom": "BLAVY", "prenom": "Pauline" }, { "nom": "DIAGNE", "prenom": "Coumba" }, { "nom": "RATHIER", "prenom": "Sylia" }] },
+  { "name": "2", "year": 2025, "members": [{ "nom": "MARTIN", "prenom": "Valentin" }, { "nom": "ASSIL", "prenom": "Assil" }, { "nom": "HELLO", "prenom": "Hola" }] },
+  { "name": "3", "year": 2025, "members": [{ "nom": "BLAVY", "prenom": "Pauline" }, { "nom": "RATHIER", "prenom": "Sylia" }, { "nom": "ZAIT", "prenom": "Wafa" }, { "nom": "DIAGNE", "prenom": "Coumba" }] },
+  { "name": "4", "year": 2025, "members": [{ "nom": "BLAVY", "prenom": "Pauline" }, { "nom": "DIAGNE", "prenom": "Coumba" }] }
+]
