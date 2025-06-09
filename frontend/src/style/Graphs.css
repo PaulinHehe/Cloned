@@ -1,0 +1,75 @@
+.commit-activity-timeline {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+
+
+.no-data,
+.error,
+.loading {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.error {
+  color: #e53935;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 24px; /* espace entre les enfants */
+}
+
+svg {
+  width: 100%;
+  height: 600px;
+  margin-bottom: 32px;
+}
+
+.color-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.color-box.low { background-color: #fff9c4; }
+.color-box.medium { background-color: #ffe0b2; }
+.color-box.high { background-color: #ff8a65; }
+
+i {
+  font-style: italic;
+  font-weight: 100;
+  font-size: smaller;
+  padding: 20px;
+  display: block;
+  text-align: center;
+}
+
+.tooltip-heatmap {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 600px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}

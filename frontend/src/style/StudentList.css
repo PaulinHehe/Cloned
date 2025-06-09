@@ -1,0 +1,110 @@
+/* Dans StudentList.css ou GroupList.css */
+
+.students-table {
+    width: 100%; /* S'assure que le tableau prend toute la largeur disponible */
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.students-table th,
+.students-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.students-table th {
+    background-color: #e2e2e2;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Applique la largeur aux en-têtes et aux cellules */
+.students-table th:nth-child(1),
+.students-table td:nth-child(1) {
+    width: 75%; /* Pour la colonne Nom (N° Étudiant) */
+}
+
+.students-table th:nth-child(2),
+.students-table td:nth-child(2) {
+    width: 25%; /* Pour la colonne Groupe */
+}
+
+/* Le reste de votre CSS... */
+.students-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.year-section {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.year-title {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.year-title:hover {
+    background-color: #e0e0e0;
+}
+
+.toggle-icon {
+    font-size: 0.8em;
+    transition: transform 0.2s;
+}
+
+.year-content-tables {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.class-section {
+    flex: 1;
+    min-width: 300px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.class-section h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.students-table ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.students-table li {
+    margin-bottom: 2px;
+}
+
+
+.student-name-link {
+    text-decoration: none; /* This removes the underline */
+    color: inherit; /* Optional: Keep the link color the same as its parent text */
+    /* You can add other styling here if you want, e.g., */
+    /* font-weight: bold; */
+}
+
+/* If you want to change the color when hovering, add this: */
+.student-name-link:hover {
+    color: #005813; /* Example: A blue color on hover */
+}

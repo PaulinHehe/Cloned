@@ -1,0 +1,16 @@
+# PROJET-GIT/Dockerfile.flask
+FROM python:3.11-slim-bookworm
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y git
+
+# Copy requirements.txt from the project root
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your entire 'backend' folder into the container's /app directory
+COPY . /app/api
+
+# Command to run your Flask app (assuming main.py is your entry point)
+CMD ["python", "/app/api/main.py"]

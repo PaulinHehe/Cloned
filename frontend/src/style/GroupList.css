@@ -1,0 +1,83 @@
+/* GroupList.css */
+
+.groups-container {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.year-section {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 40px;
+}
+
+.year-title {
+    padding: 15px 20px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.year-title:hover {
+    background-color: #d5d5d5;
+}
+
+.toggle-icon {
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+.year-content {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.group-card {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fefefe;
+}
+
+.group-card h3 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.2em;
+}
+
+.group-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.group-card li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.group-card p {
+    font-style: italic;
+    color: #888;
+}

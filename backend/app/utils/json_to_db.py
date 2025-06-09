@@ -12,7 +12,8 @@ class JSONToDB:
     @staticmethod
     def get_json_path(filename: str) -> str:
         """Returns the full path to a JSON file in the 'data/' directory."""
-        base_dir = Path(app.root_path).parent.parent
+        base_dir = Path(app.root_path).parent
+        app.logger.debug(f"Import --- ", base_dir / 'data' / filename)
         return str(base_dir / 'data' / filename)
 
     @staticmethod
@@ -92,7 +93,7 @@ class JSONToDB:
             with open(path, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except FileNotFoundError:
-            app.logger.error(f"JSON file not found: {path}")
+            app.logger.error(f"JSON file not found: {path}, root : {app.root_path}")
             return []
         except json.JSONDecodeError as e:
             app.logger.error(f"Error decoding JSON from {filename}: {e}")

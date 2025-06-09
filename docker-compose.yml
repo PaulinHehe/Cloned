@@ -1,0 +1,85 @@
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword123
+      MYSQL_DATABASE: gitanalyser
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db_init/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.flask
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: userpassword123
+      DB_NAME: gitanalyser
+      DB_PORT: 3306
+    volumes:
+      - repo-data:/app/clones
+
+  front:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.front
+    restart: always
+    depends_on:
+      - api
+    ports:
+      - "4000:4000"
+
+  archeologist-db:
+    image: timescale/timescaledb-ha:pg17
+    container_name: archeologist-db
+    environment:
+      POSTGRES_USER: archeologist
+      POSTGRES_PASSWORD: archeologist_password
+      POSTGRES_DB: archeologist_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - archeologist-data:/home/postgres/pgdata/data
+      - ./db_init/init-timescaledb.sql:/docker-entrypoint-initdb.d/init-timescaledb.sql
+    restart: unless-stopped
+
+  archeologist:
+    build:
+      context: ./archeologist/backend
+      dockerfile: Dockerfile.archeologist
+    restart: always
+
+    depends_on:
+      - archeologist-db
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: archeologist-db
+      DB_PORT: 5432
+      DB_USER: archeologist
+      DB_PASSWORD: archeologist_password
+      DB_NAME: archeologist_db
+      PORT: 3000
+      OLLAMA_BASE_URL: http://localhost:11434
+      OLLAMA_EMBEDDING_MODEL: nomic-embed-text
+    working_dir: /app/backend
+    command: /bin/sh -c "npm install && npm start"
+    volumes:
+      - repo-data:/app/clones
+
+volumes:
+  mysql-data:
+  archeologist-data:
+  repo-data:

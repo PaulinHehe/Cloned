@@ -1,0 +1,469 @@
+/* App.css (or Global.css) */
+
+/* Variables CSS pour une gestion des couleurs plus facile */
+:root {
+    --color-primary: #007bff; /* Bleu vibrant pour les accents */
+    --color-primary-light: #e6f0ff; /* Bleu très clair pour les fonds subtils */
+    --color-text-dark: #212529; /* Texte principal sombre */
+    --color-text-medium: #495057; /* Texte secondaire, titres de section */
+    --color-text-light: #6c757d; /* Texte de chargement, info */
+    --color-background-light: #f8f9fa; /* Arrière-plan général très clair */
+    --color-background-card: #ffffff; /* Fond des cartes et conteneurs principaux */
+    --color-border: #e0e0e0; /* Bordures subtiles */
+    --color-border-light: #f0f0f0; /* Bordures encore plus légères */
+    --color-shadow-subtle: rgba(0, 0, 0, 0.05); /* Ombre très légère */
+    --color-shadow-medium: rgba(0, 0, 0, 0.08); /* Ombre moyenne */
+    --color-success: #28a745; /* Couleur pour les additions (vert) */
+    --color-danger: #dc3545; /* Couleur pour les suppressions (rouge) */
+    --color-info: #17a2b8; /* Couleur pour les informations/neutre */
+}
+
+/* Base et Reset */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Assurez-vous d'importer Inter depuis Google Fonts */
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Shared Styles for Loading/Error Texts --- */
+.loading-text,
+.error-text,
+.no-data-text {
+    font-style: italic;
+    color: var(--color-text-light); /* Utilisation de la variable */
+    margin-top: 20px;
+    text-align: center; /* Centrer le texte de chargement/erreur */
+    padding: 15px 0; /* Add padding for consistency */
+}
+
+.error-text {
+    color: var(--color-danger); /* Utilisation de la variable */
+    font-weight: 600;
+}
+
+/* --- GroupAnalysis.jsx Specific Styles --- */
+.group-analysis-container {
+    padding: 40px 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-card);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px var(--color-shadow-medium);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.group-analysis-container h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 35px;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.students-list {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-background-card);
+    box-shadow: 0 2px 8px var(--color-shadow-subtle);
+    padding: 25px;
+    margin-bottom: 0;
+}
+
+.students-list h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--color-text-medium);
+    border-bottom: 1px solid var(--color-border-light);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.students-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.students-list li {
+    padding: 12px 14px;
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    color: var(--color-text-medium);
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px var(--color-shadow-subtle);
+    transition: background-color 0.3s ease;
+    cursor: default;
+}
+
+.students-list li:hover {
+    background-color: var(--color-primary-light);
+}
+
+.students-list li span.class {
+    font-style: italic;
+    color: var(--color-text-light);
+    font-weight: 400;
+}
+
+.global-stats-table-wrapper {
+    margin-top: 30px;
+}
+
+.global-stats-table-wrapper h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    font-weight: 600;
+    color: var(--color-text-medium);
+    border-bottom: 1px solid var(--color-border-light);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-background-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--color-shadow-subtle);
+}
+
+
+.stats-table th,
+.stats-table td {
+    border: 1px solid var(--color-border-light);
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+.stats-table th {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.stats-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.stats-table tbody tr:hover {
+    background-color: var(--color-primary-light);
+    cursor: default;
+}
+
+.addition-value {
+    color: var(--color-success) !important;
+}
+
+.deletion-value {
+    color: var(--color-danger) !important;
+}
+
+.repo-card {
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background: #fafcff;
+    padding: 22px 26px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.25s ease;
+}
+
+.repo-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.repo-card h3 {
+    margin-bottom: 14px;
+    color: #0056b3;
+    font-weight: 700;
+    font-size: 1.3em;
+    user-select: text;
+}
+
+.charts-wrapper > * {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.charts-wrapper > *:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Dashboard.jsx Specific Styles (from previous request) --- */
+.dashboard-container {
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-card);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px var(--color-shadow-medium);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.dashboard-container h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 35px;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.class-stats-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.class-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px var(--color-shadow-subtle);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.class-stats-table th,
+.class-stats-table td {
+    border: 1px solid var(--color-border-light);
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+.class-stats-table th {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.class-stats-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.class-stats-table tbody tr:hover {
+    background-color: var(--color-primary-light);
+    cursor: default;
+}
+
+.class-stats-table .total-row {
+    background-color: var(--color-primary-light);
+    font-weight: bold;
+    border-top: 2px solid var(--color-primary);
+}
+
+.class-stats-table .total-row td {
+    color: var(--color-primary);
+}
+
+.class-stats-table td:first-child {
+    vertical-align: top;
+    padding-top: 15px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.class-stats-table small {
+    font-size: 0.8em;
+    color: var(--color-text-light);
+}
+
+.class-stats-table td:last-child {
+    text-align: center;
+}
+
+/* --- StudentProfile.jsx Specific Styles --- */
+.student-profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: var(--color-background-card); /* Using variable */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--color-shadow-medium); /* Using variable */
+    font-family: 'Inter', sans-serif; /* Consistent font */
+    color: var(--color-text-dark); /* Using variable */
+}
+
+.student-profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-border); /* Using variable */
+}
+
+.student-profile-header h1 {
+    color: var(--color-primary); /* Using variable */
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.student-profile-header p {
+    font-size: 1.08em;
+    margin-bottom: 5px;
+    color: var(--color-text-medium); /* Using variable */
+}
+
+.student-profile-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--color-background-light); /* Using variable for light background */
+    border-radius: 8px;
+    border: 1px solid var(--color-border-light); /* Using variable */
+}
+
+.student-profile-section h2 {
+    color: var(--color-primary); /* Using variable */
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed var(--color-border); /* Using variable */
+    letter-spacing: 0.5px;
+}
+
+.info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border-light); /* Using variable */
+    font-size: 1.08em;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+/* Groups & Projects */
+.group-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.group-list li {
+    background-color: var(--color-primary-light); /* Using variable */
+    border: 1px solid var(--color-primary); /* Adjusted border to primary */
+    padding: 10px 15px;
+    margin-bottom: 14px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.02em;
+    position: relative;
+}
+
+.group-list li:last-child {
+    margin-bottom: 0;
+}
+
+.repo-projet-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.repo-projet-list li {
+    background: #f0f8ff; /* Specific light blue for project repos */
+    margin-bottom: 6px;
+    padding: 8px 15px 8px 32px;
+    border-radius: 4px;
+    border: 1px solid #d6ecff; /* Specific border for project repos */
+    color: #007b83; /* Specific text color for project repos */
+    font-size: 1em;
+    position: relative;
+}
+
+.repo-projet-list li:last-child {
+    margin-bottom: 0;
+}
+
+.repo-td-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.repo-td-list li {
+    background: #f9fafc; /* Specific light background for TD repos */
+    margin-bottom: 7px;
+    padding: 8px 15px 8px 32px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border); /* Using variable */
+    color: var(--color-text-medium); /* Using variable */
+    font-size: 1em;
+    position: relative;
+}
+
+.repo-td-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .group-analysis-container,
+    .dashboard-container,
+    .student-profile-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .students-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .students-list li span.class {
+        margin-top: 4px;
+    }
+
+    .class-stats-table th,
+    .class-stats-table td {
+        padding: 8px 10px; /* Reduce padding on small screens */
+        font-size: 0.85em; /* Smaller font on small screens */
+    }
+
+    .student-profile-header h1 {
+        font-size: 1.8em;
+    }
+}

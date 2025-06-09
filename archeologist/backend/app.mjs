@@ -202,12 +202,6 @@ async function getTotalCommitCountAllBranches(owner, repo, local) {
 
       let totalCommits = 0;
       const seenCommits = new Set();
-      /*for (const branch of branches) {
-        console.log("Total commits", totalCommits);
-        // compter commits pour chaque branche
-        const { stdout: countStdout } = await execPromise(`git -C ${repoPath} rev-list --count ${branch}`);
-        totalCommits += parseInt(countStdout.trim(), 10);
-      }*/
       for (const branch of branches) {
         const { stdout: commitsStdout } = await execPromise(
           `git -C ${repoPath} log ${branch} --since="${sinceDate}" --until="${untilDate}" --pretty=format:"%H|%aI|%ae"`
@@ -648,7 +642,7 @@ async function fetchBlameAllBranches(owner, repo, local, commits) {
                   const author = line.slice(7).trim();
                   const lineKey = `${file}:${currentLine}`; // Assurez-vous de capturer le contenu de la ligne
                   if (!seenLines.has(lineKey)) {
-                    seenLines.add(lineKey);
+                    //seenLines.add(lineKey);
                     blamePerAuthor[author] = (blamePerAuthor[author] || 0) + 1;
                   }
                 } else if (line.startsWith('\t')) {

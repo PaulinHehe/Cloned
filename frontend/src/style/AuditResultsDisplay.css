@@ -1,0 +1,157 @@
+/* src/style/AuditResultsDisplay.css */
+
+.audit-results-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.audit-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.audit-section-summary {
+    background-color: #e8f0f7;
+    padding: 15px 20px;
+    border-left: 5px solid #3498db;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+.audit-section-summary h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.4em;
+}
+
+.audit-section-summary p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.audit-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.audit-section h3 {
+    color: #34495e;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Ensures tables are scrollable on small screens */
+    margin-top: 20px;
+}
+
+.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+.audit-table th,
+.audit-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.audit-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+    white-space: nowrap;
+}
+
+.audit-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.audit-table tbody tr:hover {
+    background-color: #eef;
+}
+
+.added-lines {
+    color: #28a745; /* Green for additions */
+    font-weight: bold;
+}
+
+.deleted-lines {
+    color: #dc3545; /* Red for deletions */
+    font-weight: bold;
+}
+
+.custom-tooltip {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+.custom-tooltip .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.custom-tooltip p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 40px 0;
+}
+
+.loading-text, .error-text {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #777;
+}
+
+.error-text {
+    color: #d9534f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .audit-results-container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .audit-title {
+        font-size: 1.8em;
+    }
+
+    .audit-section h3 {
+        font-size: 1.4em;
+    }
+
+    .audit-table th,
+    .audit-table td {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+}

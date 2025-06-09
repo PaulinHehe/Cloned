@@ -1,0 +1,143 @@
+.student-profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #232323;
+}
+
+.student-profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.student-profile-header h1 {
+    color: #0056b3;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.student-profile-header p {
+    font-size: 1.08em;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.student-profile-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fafcff;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+}
+
+.student-profile-section h2 {
+    color: #007bff;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #c0c0c0;
+    letter-spacing: 0.5px;
+}
+
+.info-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ececec;
+    font-size: 1.08em;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+/* Groups & Projects */
+.group-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.group-list li {
+    background-color: #eaf6ff;
+    border: 1px solid #cce7ff;
+    padding: 10px 15px;
+    margin-bottom: 14px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.02em;
+    position: relative;
+}
+
+.group-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+.repo-projet-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.repo-projet-list li {
+    background: #f0f8ff;
+    margin-bottom: 6px;
+    padding: 8px 15px 8px 32px;
+    border-radius: 4px;
+    border: 1px solid #d6ecff;
+    color: #007b83;
+    font-size: 1em;
+    position: relative;
+}
+
+.repo-projet-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+.repo-td-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.repo-td-list li {
+    background: #f9fafc;
+    margin-bottom: 7px;
+    padding: 8px 15px 8px 32px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    color: #555;
+    font-size: 1em;
+    position: relative;
+}
+
+.repo-td-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.error-message {
+    color: #d9534f;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0;
+}

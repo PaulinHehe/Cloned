@@ -1,0 +1,255 @@
+/* src/style/Toolbar.css */
+
+.toolbar {
+    background-color: #333;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1000;
+}
+
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toolbar-left .toolbar-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-logo-img {
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.toolbar-nav-left-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toolbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #555;
+}
+
+.dropdown-arrow {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 12px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #666;
+}
+
+/* --- */
+
+/* Audit Section Specific Styles (Updated) */
+.audit-section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Ajoutez cette ligne pour donner un fond à .audit-section */
+    background-color: #333; /* Ou #3a3e47 si vous préférez cette nuance de gris */
+    /* Assurez-vous que cette section n'a pas de padding ou margin qui révèle l'extérieur */
+    padding: 0; /* Assurez-vous qu'il n'y a pas de padding par défaut indésirable */
+    margin-top: 30px;  /* Assurez-vous qu'il n'y a pas de margin par défaut indésirable */
+}
+
+.audit-input {
+    padding: 8px 12px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #555;
+    color: white;
+    font-size: 0.95em;
+    width: 280px;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.audit-input::placeholder {
+    color: #bbb;
+}
+
+.audit-input:focus {
+    border-color: #007bff;
+    background-color: #444;
+}
+
+.audit-button {
+    background-color: #555; /* Assure la même couleur que l'input */
+    color: white;
+    border: 1px solid #555; /* Assure la même bordure que l'input */
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: normal;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+}
+
+.audit-button:hover {
+    background-color: #666; /* Effet de survol cohérent */
+    border-color: #666;
+}
+
+.audit-button:active {
+    background-color: #444; /* Effet de clic cohérent */
+    border-color: #444;
+    transform: translateY(1px);
+}
+
+.audit-message {
+    margin-left: 10px;
+    font-size: 0.85em;
+    color: #aaddff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .toolbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .toolbar-nav-left-items {
+        width: 100%;
+        margin-top: 0px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .toolbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 0px;
+        gap: 10px;
+    }
+
+    .dropdown {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #3a3e47;
+        margin: 0;
+        padding-left: 15px;
+    }
+
+    .audit-section {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-left: 0;
+        /* Cette ligne sera toujours appliquée en mobile, si elle diffère de la version desktop */
+        background-color: #3a3e47;
+    }
+
+    .audit-input {
+        width: calc(100% - 24px);
+        max-width: none;
+        background-color: #3a3e47;
+    }
+
+    .audit-button {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .audit-message {
+        margin-top: 5px;
+        margin-left: 0;
+        width: 100%;
+        max-width: none;
+        text-align: center;
+    }
+}

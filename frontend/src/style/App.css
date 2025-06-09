@@ -1,0 +1,39 @@
+/* src/index.css or src/App.css (or whichever is your main global CSS file) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Basic CSS Reset to remove default browser margins/padding */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    /* Optional: Ensure the body takes up the full viewport height */
+    height: 100%;
+    width: 100%;
+    /* Optional: Remove default scrollbar margins */
+    overflow-x: hidden; /* Prevents horizontal scrollbar if elements go off screen */
+}
+
+/* Optional: Set a default font-family */
+body {
+    font-family: 'Inter', sans-serif; /* Replace 'Inter' with your chosen font name */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: Reset box-sizing for easier layout calculations */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin from headings and paragraphs if desired */
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+/* Ensure no default margin on lists */
+ul, ol {
+    margin: 0;
+    padding: 0; /* Remove default padding for lists */
+    list-style: none; /* Remove default bullets/numbers */
+}
